@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>माटीकला - मिट्टी के बर्तन</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">सुगंध मिट्टी <span>की </span></div>
+            
+            <ul class="nav-links">
+                <li><a href="#hero" data-lang-key="nav_home">होम</a></li>
+                <li><a href="#categories" data-lang-key="nav_categories">श्रेणियाँ</a></li>
+                <li><a href="#products" data-lang-key="nav_products">उत्पाद</a></li>
+                <li><a href="javascript:void(0)" id="track-order-nav-btn"><i class="fa-solid fa-truck"></i> <span data-lang-key="nav_track">ऑर्डर ट्रैक करें</span></a></li>
+                <li><a href="#about" data-lang-key="nav_about">हमारे बारे में</a></li>
+                <li><a href="#contact" data-lang-key="nav_contact">संपर्क करें</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <!-- LANGUAGE SWITCHER DROPDOWN -->
+                <div class="lang-switcher">
+                    <i class="fa-solid fa-globe"></i>
+                    <select id="language-select">
+                        <option value="hi" selected>हिंदी</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="खोजें (जैसे: हांडी, सुराही)...">
+                    <button type="button" class="search-btn" id="search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <!-- THEME TOGGLE BUTTON -->
+                <button class="theme-toggle-btn" id="theme-toggle-btn" title="थीम बदलें">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- CART TRIGGER ICON -->
+                <a href="javascript:void(0)" class="cart" id="cart-icon-btn" title="कार्ट">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </a>
+
+                <a href="javascript:void(0)" class="login" data-lang-key="nav_login">लॉगिन</a>
+            </div>
+
+            <div class="menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 data-lang-key="hero_title">शुद्ध प्राकृतिक <span>मिट्टी के बर्तन</span></h1>
+            <p data-lang-key="hero_desc">पारंपरिक और स्वास्थ्यवर्धक मिट्टी से बने बर्तन, जो आपके जीवन को प्राकृतिक और स्वस्थ बनाते हैं।</p>
+            <a href="#products" class="shop-btn" data-lang-key="hero_btn">खरीदारी शुरू करें</a>
+        </div>
+    </section>
+
+
+    <!-- CATEGORIES SECTION -->
+    <section class="categories-section" id="categories">
+        <div class="section-title">
+            <h2 data-lang-key="cat_title">लोकप्रिय श्रेणियाँ</h2>
+            <p data-lang-key="cat_subtitle">अपनी जरूरत के हिसाब से सही बर्तन चुनें</p>
+        </div>
+
+        <div class="category-grid">
+            <div class="category-card" data-category="kitchen">
+                <img src="images/kulhad.jpg" alt="रसोई के बर्तन">
+                <h3 data-lang-key="cat_1">रसोई के बर्तन</h3>
+            </div>
+            <div class="category-card" data-category="water">
+                <img src="images/surahi.jpg" alt="पेयजल और मटके">
+                <h3 data-lang-key="cat_2">पेयजल और मटके</h3>
+            </div>
+            <div class="category-card" data-category="dining">
+                <img src="images/plate.jpg" alt="डिनर सेट और प्लेट्स">
+                <h3 data-lang-key="cat_3">डिनर सेट और प्लेट्स</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section" id="products">
+        <div class="section-title">
+            <h2 data-lang-key="prod_title">हमारे उत्पाद</h2>
+            <p data-lang-key="prod_subtitle">प्राकृतिक और शुद्ध मिट्टी से बने बर्तन</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all" data-lang-key="filter_all">सभी (All)</button>
+            <button class="filter-btn" data-filter="kitchen" data-lang-key="filter_kitchen">रसोई के बर्तन</button>
+            <button class="filter-btn" data-filter="water" data-lang-key="filter_water">पेयजल और मटके</button>
+            <button class="filter-btn" data-filter="dining" data-lang-key="filter_dining">डिनर सेट</button>
+        </div>
+
+        <div class="products" id="product-container">
+            <div class="product-card" data-category="kitchen" data-id="1">
+                <div class="product-image">
+                    <img src="images/kulhad.jpg" alt="हांडी">
+                </div>
+                <div class="product-info">
+                    <div class="star-rating">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span>(4.8)</span>
+                    </div>
+                    <h3 class="product-title" data-lang-key="p1_title">हांडी</h3>
+                    <p class="description" data-lang-key="p1_desc">प्राकृतिक मिट्टी से बनी सुंदर हांडी, खाना बनाने और स्वाद बढ़ाने के लिए उपयुक्त।</p>
+                    <div class="price-box">
+                        <span class="price">₹299</span>
+                        <span class="old-price">₹399</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-lang-key="add_cart">🛒 कार्ट में जोड़ें</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="water" data-id="2">
+                <div class="product-image">
+                    <img src="images/jug.jpg" alt="जग थर्मस">
+                </div>
+                <div class="product-info">
+                    <div class="star-rating">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <h3 class="product-title" data-lang-key="p2_title">जग थर्मस</h3>
+                    <p class="description" data-lang-key="p2_desc">पानी को कुदरती ठंडा और सेहतमंद रखने के लिए मिट्टी का विशेष जग।</p>
+                    <div class="price-box">
+                        <span class="price">₹999</span>
+                        <span class="old-price">₹1,299</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-lang-key="add_cart">🛒 कार्ट में जोड़ें</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="water" data-id="3">
+                <div class="product-image">
+                    <img src="images/surahi.jpg" alt="सुराही">
+                </div>
+                <div class="product-info">
+                    <div class="star-rating">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span>(4.9)</span>
+                    </div>
+                    <h3 class="product-title" data-lang-key="p3_title">सुराही</h3>
+                    <p class="description" data-lang-key="p3_desc">पारंपरिक कुम्हार कला से बनी सुंदर सुराही, प्राकृतिक रूप से ठंडे पानी के लिए।</p>
+                    <div class="price-box">
+                        <span class="price">₹699</span>
+                        <span class="old-price">₹899</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-lang-key="add_cart">🛒 कार्ट में जोड़ें</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="dining" data-id="4">
+                <div class="product-image">
+                    <img src="images/plate.jpg" alt="मिट्टी की प्लेट">
+                </div>
+                <div class="product-info">
+                    <div class="star-rating">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                        <span>(4.2)</span>
+                    </div>
+                    <h3 class="product-title" data-lang-key="p4_title">मिट्टी की प्लेट</h3>
+                    <p class="description" data-lang-key="p4_desc">शुद्ध और पारंपरिक भोजन अनुभव के लिए हैंडमेड मिट्टी की प्लेट्स।</p>
+                    <div class="price-box">
+                        <span class="price">₹349</span>
+                        <span class="old-price">₹499</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-lang-key="add_cart">🛒 कार्ट में जोड़ें</button>
+                </div>
+            </div>
+        </div>
+        
+        <p id="no-search-results" class="no-results-msg" style="display: none;" data-lang-key="no_results">आपकी खोज के अनुसार कोई उत्पाद नहीं मिला!</p>
+    </section>
+
+
+    <!-- ABOUT US SECTION -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 data-lang-key="about_title">हमारे बारे में</h2>
+                <p data-lang-key="about_p1">हम पारंपरिक कुम्हार कला को आधुनिक जीवनशैली से जोड़ने का काम करते हैं। हमारे सभी बर्तन पूरी तरह से शुद्ध और प्राकृतिक मिट्टी से हाथों द्वारा बनाए जाते हैं।</p>
+                <p data-lang-key="about_p2">प्लास्टिक और केमिकल वाले बर्तनों से दूर, प्रकृति की ओर एक स्वस्थ कदम बढ़ाएं।</p>
+            </div>
+            <div class="about-image">
+                <img src="images/matka.jpg" alt="मिट्टी के बर्तन">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="section-title">
+            <h2 data-lang-key="contact_title">हमसे संपर्क करें</h2>
+            <p data-lang-key="contact_subtitle">कोई सवाल या सुझाव हो तो हमें संदेश भेजें</p>
+        </div>
+
+        <div class="contact-container">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('संदेश भेज दिया गया है!');">
+                <input type="text" placeholder="आपका नाम" id="c-name" required>
+                <input type="email" placeholder="आपका ईमेल" id="c-email" required>
+                <textarea placeholder="आपका संदेश..." id="c-msg" rows="5" required></textarea>
+                <button type="submit" class="shop-btn" data-lang-key="send_msg">संदेश भेजें</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- CART DRAWER / MODAL WITH PAYMENT OPTIONS -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3><span data-lang-key="cart_heading">आपकी कार्ट</span> (<span id="drawer-cart-count">0</span>)</h3>
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+        </div>
+
+        <div class="cart-body" id="cart-body">
+            <p class="empty-cart-msg" data-lang-key="empty_cart">आपकी कार्ट अभी खाली है!</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="address-form-box" id="address-form-box">
+                <h4 data-lang-key="enter_addr">डिलीवरी पता दर्ज करें:</h4>
+                <input type="text" id="cust-name" placeholder="आपका पूरा नाम *" required>
+                <input type="tel" id="cust-phone" placeholder="मोबाइल नंबर *" required>
+                <textarea id="cust-address" placeholder="पूरा पता (हाउस न., गली, शहर, पिनकोड) *" rows="2" required></textarea>
+
+                <!-- PAYMENT METHOD SELECTION -->
+                <h4 data-lang-key="choose_pay">भुगतान का तरीका चुनें (Payment Method):</h4>
+                <div class="payment-options">
+                    <label class="pay-option">
+                        <input type="radio" name="paymentMethod" value="COD" checked>
+                        <span><i class="fa-solid fa-hand-holding-dollar"></i> <span data-lang-key="pay_cod">कैश ऑन डिलीवरी (COD)</span></span>
+                    </label>
+                    <label class="pay-option">
+                        <input type="radio" name="paymentMethod" value="ONLINE">
+                        <span><i class="fa-solid fa-qrcode"></i> <span data-lang-key="pay_online">ऑनलाइन पेमेंट (UPI / QR Code)</span></span>
+                    </label>
+                </div>
+
+                <!-- UPI QR BOX -->
+                <div class="upi-qr-box" id="upi-qr-box" style="display: none;">
+                    <p data-lang-key="qr_instruction">नीचे दिए गए QR कोड को किसी भी UPI App (GPay/PhonePe/Paytm) से स्कैन करके भुगतान करें:</p>
+                    <img id="upi-qr-img" src="" alt="UPI QR Code">
+                    <p class="upi-id-text">UPI ID: <strong>9876543210@upi</strong></p>
+                    <input type="text" id="transaction-id" placeholder="Payment UTR / Transaction ID दर्ज करें *">
+                </div>
+            </div>
+
+            <div class="total-box">
+                <span data-lang-key="total_amount">कुल राशि (Total):</span>
+                <span class="total-price" id="cart-total-price">₹0</span>
+            </div>
+
+            <button class="place-order-btn" id="place-order-btn">
+                <i class="fa-solid fa-bag-shopping"></i> <span data-lang-key="confirm_order">ऑर्ड‍र कन्फर्म करें</span>
+            </button>
+            <button class="whatsapp-btn" id="whatsapp-order-btn" style="margin-top: 8px;">
+                <i class="fa-brands fa-whatsapp"></i> <span data-lang-key="wa_order">WhatsApp पर ऑर्डर करें</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- PRODUCT QUICK VIEW MODAL -->
+    <div class="quickview-modal" id="quickview-modal">
+        <div class="quickview-content">
+            <button class="close-modal-btn" id="close-modal-btn">&times;</button>
+            <div class="quickview-body">
+                <div class="quickview-img">
+                    <img id="modal-img" src="" alt="उत्पाद">
+                </div>
+                <div class="quickview-details">
+                    <div class="star-rating" id="modal-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <h2 id="modal-title">उत्पाद का नाम</h2>
+                    <div class="price-box">
+                        <span class="price" id="modal-price">₹0</span>
+                        <span class="old-price" id="modal-old-price">₹0</span>
+                    </div>
+                    <p id="modal-desc">उत्पाद की जानकारी...</p>
+                    <button class="add-to-cart-btn" id="modal-add-btn" data-lang-key="add_cart">🛒 कार्ट में जोड़ें</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ORDER TRACKING MODAL -->
+    <div class="quickview-modal" id="track-modal">
+        <div class="quickview-content" style="max-width: 450px; padding: 25px;">
+            <button class="close-modal-btn" id="close-track-btn">&times;</button>
+            <h2 style="color: var(--primary-color); margin-bottom: 15px; text-align: center;"><i class="fa-solid fa-truck-fast"></i> <span data-lang-key="track_modal_title">अपना ऑर्डर ट्रैक करें</span></h2>
+            
+            <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                <input type="text" id="track-order-id-input" placeholder="ऑर्डर ID दर्ज करें (उदा: MK12345)" style="flex: 1; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--card-bg); color: var(--text-color);">
+                <button id="search-order-btn" style="padding: 10px 15px; background: var(--accent-color); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;" data-lang-key="track_btn">ट्रैक करें</button>
+            </div>
+
+            <div id="track-result-box" style="display: none; background: var(--bg-color); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                <h4 style="color: var(--primary-color); margin-bottom: 5px;" id="track-res-id">ऑर्डर ID: -</h4>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;" id="track-res-date">तारीख: -</p>
+
+                <!-- Order Steps Bar -->
+                <div class="tracking-steps">
+                    <div class="track-step active" id="step-placed">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span data-lang-key="step_placed">ऑर्डर हुआ</span>
+                    </div>
+                    <div class="track-step" id="step-shipped">
+                        <i class="fa-solid fa-box"></i>
+                        <span data-lang-key="step_shipped">शिप हो गया</span>
+                    </div>
+                    <div class="track-step" id="step-delivered">
+                        <i class="fa-solid fa-house-chimney-user"></i>
+                        <span data-lang-key="step_delivered">डिलीवर हुआ</span>
+                    </div>
+                </div>
+
+                <p style="margin-top: 15px; font-size: 14px;" id="track-res-items"><strong>उत्पाद:</strong> -</p>
+                <p style="font-size: 14px;" id="track-res-total"><strong>कुल राशि:</strong> ₹0</p>
+                <p style="font-size: 14px;" id="track-res-payment"><strong>पेमेंट प्रकार:</strong> -</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LOGIN & SIGNUP MODAL -->
+    <div class="quickview-modal" id="login-modal">
+        <div class="quickview-content" style="max-width: 400px; padding: 25px; text-align: center;">
+            <button class="close-modal-btn" id="close-login-btn">&times;</button>
+            
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <button id="tab-login-btn" style="background: none; border: none; font-size: 18px; font-weight: bold; color: var(--primary-color); cursor: pointer; border-bottom: 2px solid var(--primary-color); padding-bottom: 5px;" data-lang-key="nav_login">लॉगिन</button>
+                <button id="tab-signup-btn" style="background: none; border: none; font-size: 18px; font-weight: bold; color: var(--text-muted); cursor: pointer; padding-bottom: 5px;" data-lang-key="signup_tab">साइनअप</button>
+            </div>
+
+            <form id="login-form" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="tel" placeholder="मोबाइल नंबर / ईमेल" required style="padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--card-bg); color: var(--text-color);">
+                <input type="password" placeholder="पासवर्ड" required style="padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--card-bg); color: var(--text-color);">
+                <button type="submit" style="padding: 12px; background: var(--accent-color); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;" data-lang-key="login_submit">लॉगिन करें</button>
+            </form>
+
+            <form id="signup-form" style="display: none; flex-direction: column; gap: 15px;">
+                <input type="text" placeholder="आपका पूरा नाम" required style="padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--card-bg); color: var(--text-color);">
+                <input type="tel" placeholder="मोबाइल नंबर" required style="padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--card-bg); color: var(--text-color);">
+                <input type="password" placeholder="नया पासवर्ड बनाएं" required style="padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--card-bg); color: var(--text-color);">
+                <button type="submit" style="padding: 12px; background: var(--accent-color); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;" data-lang-key="signup_submit">खाता बनाएं (Sign Up)</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast-notification" id="toast-notification">
+        <i class="fa-solid fa-circle-check"></i> <span id="toast-msg">उत्पाद कार्ट में जोड़ा गया!</span>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">माटीकला</div>
+        <p data-lang-key="footer_tagline">प्राकृतिक जीवनशैली की ओर एक कदम</p>
+        <p class="copyright">&copy; 2026 सर्वाधिकार सुरक्षित।</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
