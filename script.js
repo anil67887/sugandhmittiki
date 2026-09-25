@@ -723,7 +723,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ================= 11. WHATSAPP ORDER =================
     const whatsappOrderBtn = document.getElementById('whatsapp-order-btn');
-    const myPhoneNumber = "919876543210"; 
+    const myPhoneNumber = "7494961032"; 
 
     if (whatsappOrderBtn) {
         whatsappOrderBtn.addEventListener('click', () => {
