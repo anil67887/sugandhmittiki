@@ -388,14 +388,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
         if (cartTotalPrice) cartTotalPrice.innerText = `₹${totalPrice.toLocaleString('en-IN')}`;
 
-        // QR Code Image Dynamic Update (UPI String)
-        const upiQrImg = document.getElementById('upi-qr-img');
-        if (upiQrImg && totalPrice > 0) {
-            const upiId = "9876543210@upi";
-            const upiName = "MatiKala";
-            const qrApi = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(`upi://pay?pa=${upiId}&pn=${upiName}&am=${totalPrice}&cu=INR`)}`;
-            upiQrImg.src = qrApi;
-        }
+      
+        
 
         if (cart.length === 0) {
             cartBody.innerHTML = `<p class="empty-cart-msg">${translations[currentLang].empty_cart}</p>`;
